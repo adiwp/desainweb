@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aplikasi Manajemen Tugas</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <h1>Aplikasi Manajemen Tugas</h1>
+
+    <!-- Input Nama Pengguna -->
+    <div id="session-container">
+        <input type="text" id="namaPengguna" placeholder="Masukkan Nama Anda" />
+        <button id="btnSimpanNama">Simpan Nama</button>
+        <h3 id="salamPengguna"></h3>
+    </div>
+
+    <!-- Form Tambah Tugas -->
+    <form id="form-tambah-tugas">
+        <input type="text" id="judulTugas" placeholder="Judul Tugas" required />
+        <textarea id="deskripsiTugas" placeholder="Deskripsi Tugas" required></textarea>
+        <button type="submit">Tambah Tugas</button>
+    </form>
+
+    <!-- Daftar Tugas -->
+    <h2>Daftar Tugas</h2>
+    <div id="daftar-tugas"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
