@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch API Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .user-list {
+            margin-top: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+        .user {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+        }
+        .user h3 {
+            margin: 0;
+            font-size: 1.2em;
+        }
+        .user p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Fetch API Example</h1>
+    <p>Click the button below to load users from the API.</p>
+
+    <button id="fetchButton">Load Users</button>
+
+    <div id="output" class="user-list">
+        <!-- User data will be displayed here -->
+    </div>
+
+    <script>
+        document.getElementById('fetchButton').addEventListener('click', function() {
+            fetch('https://jsonplaceholder.typicode.com/users')
+                .then(response => response.json())  // Convert response to JSON
+                .then(data => {
+                    let output = '';
+                    data.forEach(function(user) {
+                        output += `
+                            <div class="user">
+                                <h3>${user.name}</h3>
+                                <p><strong>Email:</strong> ${user.email}</p>
+                                <p><strong>Phone:</strong> ${user.phone}</p>
+                                <p><strong>Website:</strong> ${user.website}</p>
+                            </div>
+                        `;
+                    });
+                    document.getElementById('output').innerHTML = output;  // Display the users
+                })
+                .catch(error => {
+                    console.log('Error:', error);
+                    document.getElementById('output').innerHTML = '<p>Something went wrong.</p>';
+                });
+        });
+    </script>
+
+</body>
+</html>

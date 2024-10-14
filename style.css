@@ -1,0 +1,16 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+/* pilih elemen kemudian pilih ID */
+section#sportwear {
+    border: 10px dotted red;
+    padding: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+section#shopnow {
+    border: 1px solid orange;
+    padding: 20px;
+    text-align: center;
+}
